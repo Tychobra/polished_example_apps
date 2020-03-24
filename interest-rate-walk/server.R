@@ -1,4 +1,16 @@
-function(input, output, server) {
+server <- function(input, output, session) {
+  
+  output$auth_user <- renderText({
+    req(session$userData$user())
+    session$userData$user()$email
+  })
+  
+  observeEvent(input$polish__sign_out, {
+    req(session$userData$user()$email)
+    sign_out_from_shiny(session)
+    session$reload()
+  })
+  
   cir_sims <- reactive({
     set.seed(1234)
     obs <- input$num_obs
