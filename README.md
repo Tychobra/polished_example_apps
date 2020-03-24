@@ -1,2 +1,2 @@
 # polished_example_apps
-Example Apps for Polished
+Example applications for Hosted Polished
