@@ -1,6 +1,10 @@
 
-function(input, output, session) {
+server <- function(input, output, session) {
   
+  callModule(
+    profile_module,
+    id = "profile"
+  )
   
   val_tbl <- reactive({
     req(input$val_date)
@@ -11,3 +15,5 @@ function(input, output, session) {
   source("server/02-changes-srv.R", local = TRUE)
 
 }
+
+secure_server(server)

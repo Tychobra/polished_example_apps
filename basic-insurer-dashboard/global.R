@@ -1,12 +1,29 @@
-library(shiny)
-library(shinydashboard)
-library(tibble)
-library(dplyr)
-library(apexcharter)
-library(DT)
-library(lubridate)
-library(shinyWidgets)
-library(tychobratools)
+suppressMessages({
+  library(shiny)
+  library(shinydashboard)
+  library(tibble)
+  library(dplyr)
+  library(apexcharter)
+  library(DT)
+  library(lubridate)
+  library(shinyWidgets)
+  library(tychobratools)
+  library(polished)
+})
+
+# set config env to "default" if running app locally for development, and set it to
+# production if running on shinyapps.io.
+polished::set_config_env()
+
+app_config <- config::get()
+
+db_conn <- tychobratools::db_connect(app_config$db)
+
+polished::global_sessions_config(
+  app_name = app_config$app_name,
+  firebase_project_id = app_config$firebase$projectId,
+  conn = db_conn
+)
 
 trans <- readRDS("./data/trans.RDS")
 
@@ -18,10 +35,6 @@ ay_choices <- trans %>%
                 sort()
 
 my_colors <- c("#434348", "#7cb5ec")
-
-hcoptslang <- getOption("highcharter.lang")
-hcoptslang$thousandsSep <- ","
-options(highcharter.lang = hcoptslang)
 
 valueBox2 <- function (value, subtitle, icon = NULL, backgroundColor = "#7cb5ec", textColor = "#FFF", width = 4, href = NULL)
 {

@@ -1,7 +1,7 @@
-library(shiny)
 
 header <- dashboardHeader(
-  title = "Claims Dashboard"
+  title = "Claims Dashboard",
+  polished::profile_module_ui("profile")
 )
 
 sidebar <- dashboardSidebar(
@@ -36,9 +36,14 @@ body <- dashboardBody(
   )
 )
 
-dashboardPage(
+ui <- dashboardPage(
   header,
   sidebar,
   body,
   skin = "black"
+)
+
+secure_ui(
+  ui,
+  firebase_config = app_config$firebase
 )
