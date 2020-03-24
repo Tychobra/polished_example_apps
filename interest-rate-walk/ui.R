@@ -11,13 +11,13 @@ fluidPage(
     headerPanel(
       tags$div(
         style = "text-align: center;",
-        a(
-          img(
-            src = "https://res.cloudinary.com/dxqnb8xjb/image/upload/v1509563497/tychobra-logo-blue_dacbnz.svg", 
-            width = 50
-          ), 
-          href = "https://tychobra.com/shiny"
-        ),
+          a(
+            img(
+              src = "https://res.cloudinary.com/dxqnb8xjb/image/upload/v1509563497/tychobra-logo-blue_dacbnz.svg", 
+              width = 50
+            ), 
+            href = "https://tychobra.com/shiny"
+          ),
         h1("Interest Rate Walk", style = "display: inline")
       ), 
       windowTitle = "Interest Rate"
@@ -168,4 +168,9 @@ fluidPage(
       )
     )
   )
+)
+
+secure_ui(
+  ui,
+  firebase_config = app_config$firebase
 )

@@ -319,3 +319,5 @@ function(input, output, server) {
       )
   })
 }
+
+secure_server(server)
