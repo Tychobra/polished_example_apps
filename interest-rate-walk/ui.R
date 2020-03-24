@@ -201,7 +201,11 @@ ui <- fluidPage(
         apexchartOutput("ir_chart_2", height = 100)
       )
     )
-  )
+  ),
+  # Breaks for Admin Panel
+  br(),
+  br(),
+  br()
 )
 
 secure_ui(
