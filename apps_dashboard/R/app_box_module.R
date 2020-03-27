@@ -34,7 +34,7 @@ app_box_module_ui <- function(
             front_content = img(
               src = img_src,
               width = "100%",
-              height = "380px",
+              height = "430px",
               style = "border: 1px solid black"
             ),
             back_content = div(
