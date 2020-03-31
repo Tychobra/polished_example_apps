@@ -43,7 +43,4 @@ ui <- dashboardPage(
   skin = "black"
 )
 
-secure_ui(
-  ui,
-  firebase_config = app_config$firebase
-)
+secure_ui(ui)

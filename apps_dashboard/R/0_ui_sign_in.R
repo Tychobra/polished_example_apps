@@ -75,10 +75,7 @@ fluidPage(
       "Tychobra"
     ),
 
-    polished::sign_in_module_ui(
-      "sign_in",
-      app_config$firebase
-    ),
+    polished::sign_in_module_ui("sign_in"),
 
     # div(
     #   style = "width: 300px; max-width: 100%; background-color: #FFF",
