@@ -12,10 +12,9 @@ sidebar <- dashboardSidebar(
 
 body <- dashboardBody(
   tags$head(
-    tags$link(rel = "stylesheet", type = "text/css", href = "styles.css"),
-    tags$script(src = "js/custom.js"),
-    polished::firebase_dependencies(),
-    polished::firebase_init(app_config$firebase)
+    tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")#,
+    #polished::firebase_dependencies(),
+    #polished::firebase_init(app_config$firebase)
   ),
   shinyjs::useShinyjs(),
   fluidRow(
@@ -37,7 +36,7 @@ body <- dashboardBody(
           tags$li("Download the claims for further analysis on your computer")
         )
       ),
-      app_href = "https://apps.tychobra.com/t3_client"
+      app_href = "https://tychobra.shinyapps.io/basic-insurer-dashboard"
     ),
     app_box_module_ui(
       id = "interest_rate_walk",
@@ -51,12 +50,12 @@ body <- dashboardBody(
           "Interest Rate Walk Dashboard"
         ),
         tags$ul(
-          tags$li("View visualizations and tables with interest rate data over time"),
+          tags$li("View tables of interest rate data over time"),
           tags$li("Run a Cox-Ingersoll-Ross random walk or a bootstrap resampling of treasury yield changes"),
           tags$li("View historical treasury yields to reference for parameter selection during resampling")
         )
       ),
-      app_href = "https://apps.tychobra.com/github_issues"
+      app_href = "https://tychobra.shinyapps.io/interest-rate-walk"
     )
   )
 )

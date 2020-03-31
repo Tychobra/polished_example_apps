@@ -84,7 +84,7 @@ app_box_module_ui <- function(
     shiny::singleton(
       tags$script(src = "js/app_box_module.js")
     ),
-    tags$script(sprintf("app_box_module_js('%s')", id)),
+    tags$script(sprintf("app_box_module_js('%s')", ns(''))),
   )
 
 }
