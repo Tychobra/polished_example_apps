@@ -5,3 +5,4 @@
 *.Rproj
 config.yml
 .DS_Store
+rsconnect/
