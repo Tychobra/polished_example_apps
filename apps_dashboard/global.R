@@ -19,5 +19,6 @@ db_conn <- tychobratools::db_connect(app_config$db)
 polished::global_sessions_config(
   app_name = app_config$app_name,
   firebase_config = app_config$firebase,
-  conn = db_conn
+  conn = db_conn,
+  is_invite_required = FALSE
 )

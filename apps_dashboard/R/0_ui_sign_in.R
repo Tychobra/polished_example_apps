@@ -22,7 +22,7 @@ fluidPage(
           max-width: 100%;
           position: absolute;
           left: 50%;
-          top: 200px;
+          top: 20px;
           transform: translate(-50%, 0);
           border: none;/*4px solid #080021;*/
           padding: 10px 25px 25px 25px;
@@ -74,8 +74,7 @@ fluidPage(
       class = "above_panel",
       "Tychobra"
     ),
-
-    polished::sign_in_module_ui("sign_in"),
+    polished::sign_in_no_invite_module_ui("sign_in"),
 
     # div(
     #   style = "width: 300px; max-width: 100%; background-color: #FFF",
