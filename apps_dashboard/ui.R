@@ -70,7 +70,6 @@ ui <- dashboardPage(
 
 secure_ui(
   ui,
-  firebase_config = app_config$firebase,
   sign_in_page_ui = source("R/0_ui_sign_in.R", local = TRUE)$value
 )
 
