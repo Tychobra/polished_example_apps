@@ -1,16 +1,16 @@
 server <- function(input, output, session) {
-  
+
   output$auth_user <- renderText({
     req(session$userData$user())
     session$userData$user()$email
   })
-  
+
   observeEvent(input$polish__sign_out, {
     req(session$userData$user()$email)
     sign_out_from_shiny(session)
     session$reload()
   })
-  
+
   cir_sims <- reactive({
     set.seed(1234)
     obs <- input$num_obs
@@ -23,10 +23,10 @@ server <- function(input, output, session) {
     for (i in seq_along(out)) {
       out[[i]] <- rcCIR(n=input$num_years, Dt = 1, x0 = 0, theta = c(input$ir_mean * input$reversion, input$reversion, input$ir_sd))
     }
-    
+
     out
   })
-  
+
   bs_sims <- reactive({
     set.seed(1235)
     yields <- t_bills %>%
@@ -41,17 +41,17 @@ server <- function(input, output, session) {
     yields <- yields[!is.na(yields)]
     validate(
       need(
-        length(yields) >= 2, 
-        label = "Sample Years", 
+        length(yields) >= 2,
+        label = "Sample Years",
         message = "Not Enough Historical Yields in Sample"
-      ), 
+      ),
       errorClass = character(0)
     )
-    
+
     obs <- input$num_obs
-    
+
     yield_changes <- diff(yields) / yields[-length(yields)]
-    
+
     out <- vector("list", length = obs)
     for (i in seq_along(out)) {
       # find initial yield
@@ -60,11 +60,11 @@ server <- function(input, output, session) {
       sim_changes <- cumprod(sim_changes)
       out[[i]] <- c(initial_yield * sim_changes)
     }
-    
+
     out
-    
+
   })
-  
+
   sel_sim <- reactive({
     dat <- if (input$type == "cir") {
       cir_sims()
@@ -72,10 +72,10 @@ server <- function(input, output, session) {
       bs_sims()
     }
   })
-  
+
   sims_chart_prep <- reactive({
     dat <- sel_sim()
-    
+
     out <- vector("list", length = length(dat))
     for (i in seq_along(out)) {
       out[[i]]$data <- dat[[i]]
@@ -85,19 +85,19 @@ server <- function(input, output, session) {
       title <- if (input$type == "cir") {
         list(
           main = "Cox-Ingersoll-Ross Random Walk",
-          sub = paste0("Parameters: a = ", input$reversion, ", b = ", input$ir_mean, 
-                       ", sigma = ", input$ir_sd) 
-        ) 
+          sub = paste0("Parameters: a = ", input$reversion, ", b = ", input$ir_mean,
+                       ", sigma = ", input$ir_sd)
+        )
       } else {
           sel_duration <- gsub("[^*]_", "", input$duration)
-          
+
         list(
-          main = paste0("Bootstrap Resampling - Changes in ", 
-                       sel_duration, 
-                       " Year Treasuries"), 
-          sub = paste0("Parameters: Initial Yield = ", input$bs_yield, 
-                       ", Sampled Annual Changes from ", 
-                       input$sample_years[1], 
+          main = paste0("Bootstrap Resampling - Changes in ",
+                       sel_duration,
+                       " Year Treasuries"),
+          sub = paste0("Parameters: Initial Yield = ", input$bs_yield,
+                       ", Sampled Annual Changes from ",
+                       input$sample_years[1],
                        " to ",
                        input$sample_years[2])
         )
@@ -108,12 +108,12 @@ server <- function(input, output, session) {
       titles = title
     )
   })
-  
+
   output$sims_chart <- renderApexchart({
     dat <- sims_chart_prep()$dat
-    titles <- sims_chart_prep()$titles  
-    
-    apexchart() %>% 
+    titles <- sims_chart_prep()$titles
+
+    apexchart() %>%
       ax_chart(
         type = 'line',
         zoom = list(
@@ -167,20 +167,20 @@ server <- function(input, output, session) {
         custom = JS(paste0(
           "function({series, seriesIndex, dataPointIndex, w}) {
             var x_val = dataPointIndex + 1;
-            return '<div class=", '"text-center">', "'+ '<b>' + x_val + '</b>' + '</div>' + 
+            return '<div class=", '"text-center">', "'+ '<b>' + x_val + '</b>' + '</div>' +
               'Yield: '+ '<b>' + Math.round(series[seriesIndex][dataPointIndex] * 100) / 100 + '</b>';
           }"
         )),
         theme = "light"
       )
   })
-  
+
   output$sim_tbl <- DT::renderDataTable({
     out <- sel_sim()
     names(out) <- paste0("Observation ", 1:length(out))
     out <- as_data_frame(out)
     out <- cbind("Year" = 1:nrow(out), out)
-    
+
     DT::datatable(
       out,
       rownames = FALSE,
@@ -197,13 +197,13 @@ server <- function(input, output, session) {
         digits = 2
       )
   }, server = FALSE)
-  
-  
+
+
   output$ir_tbl <- DT::renderDataTable({
     out <- t_bills
-    
+
     out$date <- substr(as.character(out$date), 1, 4)
-    
+
     datatable(
       out,
       rownames = FALSE,
@@ -222,9 +222,9 @@ server <- function(input, output, session) {
         digits = 2
       )
   }, server = FALSE)
-  
+
   output$ir_chart_2 <- renderApexchart({
-    
+
     apexchart() %>%
       ax_chart(
         type = 'line',
@@ -237,8 +237,8 @@ server <- function(input, output, session) {
           enabled = TRUE,
           xaxis = list(
             # Convert from string (of date) to JS timestamp value
-            min = format_date(as.POSIXct(t_bill_10_new$Date[20])), #as.numeric(as.POSIXct(t_bill_10_new$Date[20]))* 1000,
-            max = format_date(as.POSIXct(t_bill_10_new$Date[35])) #as.numeric(as.POSIXct(t_bill_10_new$Date[35]))* 1000
+            min = as.numeric(as.POSIXct(t_bill_10_new$Date[20]))* 1000,
+            max = as.numeric(as.POSIXct(t_bill_10_new$Date[35]))* 1000
           )
         ),
         toolbar = list(
@@ -268,9 +268,9 @@ server <- function(input, output, session) {
       ) %>%
       ax_colors("#FEB019")
   })
-  
+
   output$ir_chart <- renderApexchart({
-    
+
     apexchart() %>%
       ax_chart(
         id = 'ir_chart',
