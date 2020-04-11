@@ -2,10 +2,19 @@ server <- function(input, output, session) {
 
   # get all users for all apps
   user_apps <- reactive({
-    polished::get_app_users(db_conn) %>%
-      filter(user_uid == session$userData$user()$user_uid) %>%
-      pull(app_name)
+    hold_user_uid <- session$userData$user()$user_uid
 
+    app_ids <- db_conn %>%
+      tbl(dbplyr::in_schema("polished", "app_users")) %>%
+      filter(user_uid == hold_user_uid) %>%
+      collect() %>%
+      pull("app_uid")
+
+    db_conn %>%
+      tbl(dbplyr::in_schema("polished", "apps")) %>%
+      filter(uid %in% app_ids) %>%
+      collect() %>%
+      pull("app_name")
   })
 
 
@@ -17,7 +26,7 @@ server <- function(input, output, session) {
   token <- reactive({
     input$firebase_token
   })
-  
+
   callModule(
     app_box_module,
     id = "basic_insurer_dashboard",
