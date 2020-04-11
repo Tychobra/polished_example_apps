@@ -41,7 +41,7 @@ body <- dashboardBody(
           tags$li("Download the claims for further analysis on your computer")
         )
       ),
-      app_href = "https://tychobra.shinyapps.io/basic-insurer-dashboard"
+      app_href = "https://tychobra.shinyapps.io/basic_insurer_dashboard"
     ),
     app_box_module_ui(
       id = "interest_rate_walk",
@@ -60,7 +60,7 @@ body <- dashboardBody(
           tags$li("View historical treasury yields to reference for parameter selection during resampling")
         )
       ),
-      app_href = "https://tychobra.shinyapps.io/interest-rate-walk"
+      app_href = "https://tychobra.shinyapps.io/interest_rate_walk"
     )
   )
 )
