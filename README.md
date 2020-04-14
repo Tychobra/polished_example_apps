@@ -4,14 +4,31 @@ Example Shiny applications using [polished](https://github.com/Tychobra/polished
 
 Live Demo Shiny apps using polished
 
-- Basic minimal example - coming soon
+#### 1. Minimal app using polished
 
-- [custom_sign_in](https://tychobra.shinyapps.io/custom_sign_in) Example with custom sign in page.
+example coming soon
 
-- [apps_dashboard](https://tychobra.shinyapps.io/apps_dashboard). With `polished`, users can sign in to multiple Shiny apps using the same email/password sign in credentials.  This allows you to make a dashboard of Shiny apps.  Users who sign into the dashboard of Shiny apps (or any Shiny app hosted in the same polished project) will then not have to reenter their credentials to switch between the Shiny apps they are authorized to access.  You can set user access at a per Shiny application level.  These are the example Shiny apps we included in the Shiny Apps Dashboard
+#### 2. Customize the Sign In / Register UI
+
+Companies often want to add their logos and branding to the sign in and register pages.  With polished, you can easily customize these pages.  Just pass your custom UI to the `sign_in_page_ui` argument of `secure_ui()`.  
+
+Sign in to a [Live Example](https://tychobra.shinyapps.io/custom_sign_in) with the following:
+
+ - email: demo@tychobra.com
+ - password: polished
+
+The code for the above example is available in the "custom_sign_in/" directory.  To get this example working, you will need to update the "config.yml" with your Firebase credentials. 
+
+#### 3. No Invite Required
+
+[no_invite_required](https://tychobra.shinyapps.io/no_) Example that Does not require and invite.
+
+#### 4. Apps Dashboard
+
+[apps_dashboard](https://tychobra.shinyapps.io/apps_dashboard). With `polished`, users can sign in to multiple Shiny apps using the same email/password sign in credentials.  This allows you to make a dashboard of Shiny apps.  Users who sign into the dashboard of Shiny apps (or any Shiny app hosted in the same polished project) will then not have to reenter their credentials to switch between the Shiny apps they are authorized to access.  You can set user access at a per Shiny application level.  These are the example Shiny apps we included in the Shiny Apps Dashboard
   - [basic_insurer_dashboard](https://tychobra.shinyapps.io/basic_insurer_dashboard)
   - [interest_rate_walk](https://tychobra.shinyapps.io/interest_rate_walk)
 
-- [no_invite_required](https://tychobra.shinyapps.io/no_) Example that Does not require and invite.
+#### 5 Custom Admin Functionality
 
-- Example with custom admin functionality - coming soon
+Example coming soon
