@@ -21,7 +21,7 @@ The code for the above example is available in the "custom_sign_in/" directory. 
 
 #### 3. No Invite Required
 
-[no_invite_required](https://tychobra.shinyapps.io/no_) Example that Does not require and invite.
+Allow anyone to register and sign in to your app (i.e. no invite required).  See the code of a simple example in the "no_invite_required/" directory and the [live demo here](https://tychobra.shinyapps.io/no_invite_required).
 
 #### 4. Apps Dashboard
 
@@ -31,4 +31,4 @@ The code for the above example is available in the "custom_sign_in/" directory. 
 
 #### 5 Custom Admin Functionality
 
-Example coming soon
+You can add custom tabs to the admin dashboard by passing the ui and server code to the `secure_ui()` and `secure_server()` functions.  Example coming soon.
