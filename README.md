@@ -2,7 +2,12 @@
 
 Example Shiny applications using [polished](https://github.com/Tychobra/polished) for authentication and user management.
 
-Live Demo Shiny apps using polished
+You can sign into each of the apps linked below using:
+
+ - email: demo@tychobra.com
+ - password: polished
+
+Additionally, the code for each app is available in this repo.  To run the apps locally, you will need to set up polished.  Set up instructions are available at this link: [https://github.com/Tychobra/polished/edit/master/README.md](https://github.com/Tychobra/polished/edit/master/README.md)
 
 #### 1. Minimal app using polished
 
@@ -12,12 +17,7 @@ example coming soon
 
 Companies often want to add their logos and branding to the sign in and register pages.  With polished, you can easily customize these pages.  Just pass your custom UI to the `sign_in_page_ui` argument of `secure_ui()`.  
 
-Sign in to a [Live Example](https://tychobra.shinyapps.io/custom_sign_in) with the following:
-
- - email: demo@tychobra.com
- - password: polished
-
-The code for the above example is available in the "custom_sign_in/" directory.  To get this example working, you will need to update the "config.yml" with your Firebase credentials. 
+[Live Example](https://tychobra.shinyapps.io/custom_sign_in) 
 
 #### 3. No Invite Required
 
