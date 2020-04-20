@@ -1,0 +1,3 @@
+default:
+  app_name: "polished_example_01"
+  api_key: "<your secret API key from dashboard.polished.tech>"
