@@ -65,7 +65,7 @@ app_box_module_ui <- function(
             href = app_href,
             target = 'blank_',
             "Live App"
-          ) %>% shinyjs::disabled(),
+          ),
           div(
             id = ns("go_to_back"),
             class = "pull-right",

@@ -12,10 +12,13 @@ fluidPage(
           padding: 30px;
           background: #f9f9f9;
         }
-        #submit_sign_in {
-          background-color: #002f58;
-          border-color: #002f58;
+
+        .btn-primary {
+          width: 100%;
         }
+
+
+
       "
     ),
 

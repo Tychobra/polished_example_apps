@@ -17,12 +17,9 @@ polished::set_config_env()
 
 app_config <- config::get()
 
-db_conn <- tychobratools::db_connect(app_config$db)
-
 polished::global_sessions_config(
   app_name = app_config$app_name,
-  firebase_config = app_config$firebase,
-  conn = db_conn
+  api_key = app_config$api_key
 )
 
 trans <- readRDS("./data/trans.RDS")
@@ -38,7 +35,7 @@ my_colors <- c("#434348", "#7cb5ec")
 
 valueBox2 <- function (value, subtitle, icon = NULL, backgroundColor = "#7cb5ec", textColor = "#FFF", width = 4, href = NULL)
 {
-  
+
   boxContent <- div(
     class = paste0("small-box"),
     style = paste0("background-color: ", backgroundColor, "; color: ", textColor, ";"),
@@ -77,32 +74,32 @@ display_names <- tribble(
 )
 
 #' show_names
-#' 
+#'
 #' @param nms character vector of names from the data
-#' 
-#' @examples 
+#'
+#' @examples
 #' show_names(names(trans))
 #'
 show_names <- function(nms) {
   nms_tbl <- tibble(data_name = nms)
-  
+
   nms_tbl <- left_join(nms_tbl, display_names, by = "data_name") %>%
                mutate(display_name = ifelse(is.na(display_name), data_name, display_name))
   nms_tbl$display_name
 }
 
 #' loss_run
-#' 
+#'
 #' view losses as of a specific date
-#' 
+#'
 #' @param val_date date the valuation date of the loss run.  Claim values from `trans`
 #' will be values as of the `val_date`
 #' @param trans data frame of claims transactions
-#' 
+#'
 #' @importFrom dplyr `%>%` filter group_by top_n ungroup mutate arrange
-#' 
+#'
 #' @return data frame of claims (1 claim per row) valued as of the `val_date`
-#' 
+#'
 loss_run <- function(val_date, trans_ = trans) {
   trans_ %>%
     filter(transaction_date <= val_date) %>%

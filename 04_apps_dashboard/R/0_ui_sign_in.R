@@ -22,7 +22,7 @@ fluidPage(
           max-width: 100%;
           position: absolute;
           left: 50%;
-          top: 20px;
+          top: 200px;
           transform: translate(-50%, 0);
           border: none;/*4px solid #080021;*/
           padding: 10px 25px 25px 25px;
@@ -37,8 +37,9 @@ fluidPage(
         .btn-primary {
           background-color:  #0277BD !important;
           border: none;
-          /*border-color: #436f88 !important!*/
+          width: 100%;
         }
+
         .footer {
           width: 300px;
           max-width: 100%;
@@ -74,7 +75,7 @@ fluidPage(
       class = "above_panel",
       "Tychobra"
     ),
-    polished::sign_in_no_invite_module_ui("sign_in"),
+    polished::sign_in_module_ui("sign_in"),
 
     # div(
     #   style = "width: 300px; max-width: 100%; background-color: #FFF",
