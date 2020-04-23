@@ -1,8 +1,10 @@
 library(shiny)
 library(polished)
 
+app_config <- config::get()
+
 # configure the global sessions when the app initially starts up.
 polished::global_sessions_config(
-  app_name = "my_first_shiny_app",
-  api_key = "<your polished.tech API key>"
+  app_name = "05_flex_dashboard",
+  api_key = app_config$api_key
 )
