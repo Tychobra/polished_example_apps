@@ -41,6 +41,11 @@ With `polished`, users can sign in to multiple Shiny apps using the same email/p
 
 Deploy a flex dashboard.
 
-#### 6. 06_custom_admin_functionality - coming soon
+#### 6. 06_your_own_firebase_project
+
+Enhance the security of your polished Shiny apps by configuring them with your own Firebase 
+project.
+
+#### 7. 07_custom_admin_functionality - coming soon
 
 You can add custom tabs to the admin dashboard by passing the ui and server code to the `secure_ui()` and `secure_server()` functions.  Example coming soon.
