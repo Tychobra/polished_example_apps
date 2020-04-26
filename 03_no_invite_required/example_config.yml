@@ -1,3 +1,2 @@
 default:
-  app_name: "03_no_invite_required"
   api_key: "<your secret API key from dashboard.polished.tech>"

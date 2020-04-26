@@ -20,7 +20,7 @@ polished::set_config_env()
 app_config <- config::get()
 
 polished::global_sessions_config(
-  app_name = app_config$app_name,
+  app_name = "04_interest_rate_walk",
   api_key = app_config$api_key
 )
 

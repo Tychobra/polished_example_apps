@@ -1,7 +1,2 @@
 default:
-  app_name: "custom_sign_in"
-  firebase:
-    apiKey: "<your Firebase project API Key>"
-    authDomain: "<your Firebase project auth domain>"
-    projectId: "<your Firebase project Id>"
-  api_key:
+  api_key: "<your secret API key from dashboard.polished.tech>"
