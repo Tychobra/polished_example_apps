@@ -26,5 +26,19 @@ ui <- fluidPage(
 
 secure_ui(
   ui,
-  sign_in_page_ui = source("custom_sign_in.R", local = TRUE)$value
+  #sign_in_page_ui = source("custom_sign_in.R", local = TRUE)$value
+  sign_in_page_ui = sign_in_ui_default(
+    color = "#006CB5",
+    company_name = "Tychobra",
+    logo_top = tags$img(
+      src = "images/tychobra_logo_white.png",
+      alt = "Tychobra Logo",
+      style = "width: 125px; margin-top: 30px; margin-bottom: 30px;"
+    ),
+    logo_bottom = tags$img(
+      src = "images/tychobra_logo_blue_co_name.png",
+      alt = "Tychobra Logo",
+      style = "width: 200px; margin-bottom: 15px; padding-top: 15px;"
+    )
+  )
 )
