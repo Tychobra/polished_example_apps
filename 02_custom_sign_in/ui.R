@@ -40,6 +40,7 @@ secure_ui(
       alt = "Tychobra Logo",
       style = "width: 200px; margin-bottom: 15px; padding-top: 15px;"
     ),
+    icon_href = "images/tychobra-icon-blue.png",
     background_image = "images/milky_way.jpeg"
   )
 )
