@@ -26,7 +26,6 @@ ui <- fluidPage(
 
 secure_ui(
   ui,
-  #sign_in_page_ui = source("custom_sign_in.R", local = TRUE)$value
   sign_in_page_ui = sign_in_ui_default(
     color = "#006CB5",
     company_name = "Tychobra",
