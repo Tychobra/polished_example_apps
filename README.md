@@ -17,7 +17,7 @@ This app uses the API available at <a href="https://polished.tech">polished.tech
 
 #### 2. 02_custom_sign_in
 
-[Live App](https://tychobra.shinyapps.io/01_minimal_example)
+[Live App](https://tychobra.shinyapps.io/02_custom_sign_in)
 
 Companies often want to add their logos and branding to the sign in and register pages.  With polished, you can easily customize these pages.  Just pass your custom UI to the `sign_in_page_ui` argument of `secure_ui()`.  
 
