@@ -9,15 +9,14 @@ ui <- fluidPage(
   ),
   fluidRow(
     titlePanel(
-      tags$div(
-        style = "text-align: center;",
+      column(
+        12,
         tags$span(
-          style = "position: absolute",
           a(
             img(
-              src = "https://res.cloudinary.com/dxqnb8xjb/image/upload/v1509563497/tychobra-logo-blue_dacbnz.svg", 
+              src = "https://res.cloudinary.com/dxqnb8xjb/image/upload/v1509563497/tychobra-logo-blue_dacbnz.svg",
               width = 50
-            ), 
+            ),
             href = "https://tychobra.com/shiny"
           ),
           h1("Interest Rate Walk", style = "display: inline"),
@@ -28,9 +27,9 @@ ui <- fluidPage(
             class = "dropdown",
             style = "display: inline;",
             tags$a(
-              href = "#", 
-              class = "dropdown-toggle", 
-              `data-toggle` = "dropdown", 
+              href = "#",
+              class = "dropdown-toggle",
+              `data-toggle` = "dropdown",
               tags$i(
                 class = "fa fa-user",
                 style = "color: #999"
@@ -40,12 +39,12 @@ ui <- fluidPage(
               class = "dropdown-menu",
               style = "position: absolute; left: auto; right: 0;",
               tags$li(
-                shiny::textOutput("auth_user"), 
+                shiny::textOutput("auth_user"),
                 style = "padding: 3px 20px;"
-              ), 
+              ),
               tags$li(
                 actionLink(
-                  "polish__sign_out", 
+                  "polish__sign_out",
                   label = "Sign Out",
                   icon = icon("sign-out")
                 )
@@ -53,7 +52,7 @@ ui <- fluidPage(
             )
           )
         )
-      ), 
+      ),
       windowTitle = "Interest Rate"
     )
   ),
