@@ -38,7 +38,7 @@ app_box_module_ui <- function(
               style = "border: 1px solid black"
             ),
             back_content = div(
-              style = "border: 1px solid black; height: 380px; background-color: #FFFFFF; color: #000000;",
+              style = "border: 1px solid black; height: 430px; background-color: #FFFFFF; color: #000000;",
               h1(
                 class = "text-center",
                 "More Info"
