@@ -17,9 +17,8 @@ body <- dashboardBody(
       type = "image/png",
       href = "https://res.cloudinary.com/dxqnb8xjb/image/upload/v1510505618/tychobra-logo-blue_d2k9vt.png"
     ),
-    tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")#,
-    #polished::firebase_dependencies(),
-    #polished::firebase_init(app_config$firebase)
+    tags$link(rel = "stylesheet", type = "text/css", href = "styles.css"),
+    tags$title("Apps Dashboard")
   ),
   shinyjs::useShinyjs(),
   fluidRow(
@@ -76,11 +75,13 @@ secure_ui(
   ui,
   sign_in_page_ui = sign_in_ui_default(
     color = "#006CB5",
-    company_name = "Tychobra",
-    logo_top = tags$img(
-      src = "images/tychobra_logo_white.png",
-      alt = "Tychobra Logo",
-      style = "width: 125px; margin-top: 30px; margin-bottom: 30px;"
+    company_name = "Shiny Apps Dashboard",
+    logo_top = tags$div(
+      style = "width: 100%; color: #FFF",
+      h1("Shiny"),
+      h1("Apps"),
+      h1("Dashboard"),
+      br()
     ),
     logo_bottom = tags$img(
       src = "images/tychobra_logo_blue_co_name.png",
