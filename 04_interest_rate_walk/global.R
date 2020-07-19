@@ -1,6 +1,5 @@
 suppressMessages({
   library(shiny)
-  library(tychobratools)
   library(apexcharter)
   library(DT)
   library(shinythemes)
