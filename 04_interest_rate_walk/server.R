@@ -223,69 +223,24 @@ server <- function(input, output, session) {
       )
   }, server = FALSE)
 
-  output$ir_chart_2 <- renderApexchart({
-
-    apexchart() %>%
-      ax_chart(
-        type = 'line',
-        brush = list(
-          enabled = TRUE,
-          target = 'ir_chart'
-        ),
-        offsetY = -20,
-        selection = list(
-          enabled = TRUE,
-          xaxis = list(
-            # Convert from string (of date) to JS timestamp value
-            min = as.numeric(as.POSIXct(t_bill_10_new$Date[20]))* 1000,
-            max = as.numeric(as.POSIXct(t_bill_10_new$Date[35]))* 1000
-          )
-        ),
-        toolbar = list(
-          autoSelected = 'selection'
-        ),
-        group = 'timeseries'
-      ) %>%
-      ax_xaxis(
-        type = 'datetime'
-      ) %>%
-      ax_yaxis(
-        opposite = TRUE,
-        tickAmount = 2,
-        labels = list(
-          formatter = JS(
-            "function(val) {
-              return '';
-            }"
-          )
-        )
-      ) %>%
-      ax_series(
-        list(
-          name = "10 Year T-Bill",
-          data = parse_df(t_bill_10_new)
-        )
-      ) %>%
-      ax_colors("#FEB019")
-  })
-
   output$ir_chart <- renderApexchart({
 
     apexchart() %>%
       ax_chart(
-        id = 'ir_chart',
+        # id = 'ir_chart',
         type = 'line',
         zoom = list(
-          type = 'xy',
+          # type = 'xy',
+          type = 'x',
           enabled = TRUE,
           autoScaleYaxis = TRUE
         ),
         toolbar = list(
-          show = TRUE,
+          # show = TRUE,
+          show = FALSE,
           autoSelected = 'zoom',
           offsetX = 15
-        ),
-        group = 'timeseries'
+        )
       ) %>%
       ax_xaxis(
         type = 'datetime'
@@ -328,8 +283,110 @@ server <- function(input, output, session) {
           name = "30 Year T-Bill",
           data = parse_df(t_bill_30_new)
         )
+      ) %>%
+      set_input_zoom(
+        inputId = 'zoom'
       )
   })
+
+  output$ir_chart_2 <- renderApexchart({
+
+    apexchart() %>%
+      ax_chart(
+        type = 'line',
+        brush = list(
+          enabled = TRUE#,
+          # target = 'ir_chart'
+        ),
+        offsetY = -20,
+        selection = list(
+          enabled = TRUE#,
+          # xaxis = list(
+          #   # Convert from string (of date) to JS timestamp value
+          #   min = as.numeric(as.POSIXct(t_bill_10_new$Date[20]))* 1000,
+          #   max = as.numeric(as.POSIXct(t_bill_10_new$Date[35]))* 1000
+          # )
+        ),
+        toolbar = list(
+          autoSelected = 'selection'
+        )
+      ) %>%
+      apexcharter::set_input_selection(
+        inputId = "brush",
+        xmin = format_date(t_bill_10_new$Date[20]),
+        xmax = format_date(t_bill_10_new$Date[35])
+      ) %>%
+      ax_xaxis(
+        type = 'datetime'
+      ) %>%
+      ax_yaxis(
+        opposite = TRUE,
+        tickAmount = 2,
+        labels = list(
+          formatter = JS(
+            "function(val) {
+              return '';
+            }"
+          )
+        )
+      ) %>%
+      ax_series(
+        list(
+          name = "10 Year T-Bill",
+          data = parse_df(t_bill_10_new)
+        )
+      ) %>%
+      ax_colors("#FEB019")
+  })
+
+  observeEvent(input$brush, {
+    apexchartProxy("ir_chart") %>%
+      ax_proxy_options(
+        list(
+          xaxis = list(
+            min = as.numeric(input$brush$x$min) * 1000,
+            max = as.numeric(input$brush$x$max) * 1000
+          )
+        )
+      )
+
+  })
+
+  observeEvent(input$zoom, {
+
+    # browser()
+    #
+    # if (is.null(input$zoom$x$min) && is.null(input$zoom$x$max)) {
+    #   apexchartProxy('ir_chart_2') %>%
+    #     ax_proxy_options(
+    #       list(
+    #         chart = list(
+    #           selection = list(
+    #             xaxis = list(
+    #               min = as.numeric(input$zoom$x$min) * 1000,
+    #               max = as.numeric(input$zoom$x$max) * 1000
+    #             )
+    #           )
+    #         )
+    #       )
+    #     )
+    # }
+
+    apexchartProxy('ir_chart_2') %>%
+      ax_proxy_options(
+        list(
+          chart = list(
+            selection = list(
+              xaxis = list(
+                min = as.numeric(input$zoom$x$min) * 1000,
+                max = as.numeric(input$zoom$x$max) * 1000
+              )
+            )
+          )
+        )
+      )
+  })
+
 }
 
 secure_server(server)
