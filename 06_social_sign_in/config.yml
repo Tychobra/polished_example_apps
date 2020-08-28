@@ -1,0 +1,6 @@
+default:
+  api_key: "<your secret API key from dashboard.polished.tech>"
+  firebase:
+    apiKey: "<your Firebase API key>"
+    authDomain: "<your Firebase auth domain>"
+    projectId: "<your Firebase project ID>"
