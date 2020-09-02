@@ -41,10 +41,17 @@ With `polished`, users can sign in to multiple Shiny apps using the same email/p
 
 Deploy a flex dashboard.
 
-#### 6. 06_your_own_firebase_project
+#### 6. 06_social_sign_in
 
-Enhance the security of your polished Shiny apps by configuring them with your own Firebase 
-project.
+[Live App](https://examples.social-sign-in-1.tychobra.com)
+
+Allow your users to sign in with social sign in providers.
+
+#### 7. 07_alt_sign_in_ui
+
+[Live App](https://examples.social-sign-in-2.tychobra.com)
+
+Use an alternate default sign in UI provided by Tychobra.  Update this UI with your brand colors, logos, and company name in minutes.
 
 #### 7. 07_custom_admin_functionality - coming soon
 
