@@ -2,7 +2,7 @@ library(shiny)
 library(polished)
 library(config)
 
-app_config <- config::get(file = "config_internal.yml")
+app_config <- config::get()
 
 # configure polished
 global_sessions_config(
