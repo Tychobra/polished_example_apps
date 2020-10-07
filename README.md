@@ -7,7 +7,7 @@ You can sign into each of the apps linked below using:
  - email: demo@tychobra.com
  - password: polished
 
-Additionally, the code for each app is available in this repo.  To run the apps locally, you will need to set up polished.  Set up instructions are available at this link: [https://github.com/Tychobra/polished/edit/master/README.md](https://github.com/Tychobra/polished/edit/master/README.md)
+Additionally, the code for each app is available in this repo.  To run the apps locally, you will need to set up polished.  Set up instructions are available at this link: [https://github.com/Tychobra/polished/blob/master/README.md](https://github.com/Tychobra/polished/blob/master/README.md)
 
 #### 1. 01_minimal_example
 
