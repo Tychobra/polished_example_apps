@@ -7,3 +7,4 @@
 rsconnect/
 config_internal.yml
 .Renviron
+deps.yaml
