@@ -40,7 +40,7 @@ body <- dashboardBody(
           tags$li("Download the claims for further analysis on your computer")
         )
       ),
-      app_href = "https://tychobra.shinyapps.io/04_basic_insurer_dashboard"
+      app_href = "https://demo4a.polished.tech"
     ),
     app_box_module_ui(
       id = "interest_rate_walk",
@@ -59,7 +59,7 @@ body <- dashboardBody(
           tags$li("View historical treasury yields to reference for parameter selection during resampling")
         )
       ),
-      app_href = "https://tychobra.shinyapps.io/04_interest_rate_walk"
+      app_href = "https://demo4b.polished.tech"
     )
   )
 )
@@ -86,7 +86,7 @@ secure_ui(
     logo_bottom = tags$img(
       src = "images/tychobra_logo_blue_co_name.png",
       alt = "Tychobra Logo",
-      style = "width: 200px; margin-bottom: 15px; padding-top: 15px;"
+      style = "width: 300px; margin-bottom: 15px;"
     ),
     icon_href = "images/tychobra_icon_blue.png",
     background_image = "images/milky_way.jpeg"
