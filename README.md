@@ -53,7 +53,7 @@ Allow your users to sign in with social sign in providers.
 
 Use an alternate default sign in UI provided by Tychobra.  Update this UI with your brand colors, logos, and company name in minutes.
 
-#### 8. 09_polishedGolemApp
+#### 8. 08_polishedGolemApp
 
 Use [golem](https://github.com/ThinkR-open/golem) with polished.
 
