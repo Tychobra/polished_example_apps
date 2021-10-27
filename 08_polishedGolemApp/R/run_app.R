@@ -5,6 +5,7 @@
 #' @export
 #' @importFrom shiny shinyApp
 #' @importFrom golem with_golem_options
+#' @importFrom polished global_sessions_config secure_ui secure_server
 run_app <- function(
   ...
 ) {

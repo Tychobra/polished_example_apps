@@ -1,5 +1,5 @@
 Package: polishedGolemApp
-Title: Polished with Golem
+Title: Polished with Golem App
 Version: 0.0.0.9000
 Authors@R: person('First Name', 'Last Name', email = 'email', role = c('cre', 'aut'))
 Description: Test polished with Golem.
@@ -11,7 +11,8 @@ Imports:
     attempt,
     DT,
     glue,
-    htmltools
+    htmltools,
+    polished
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.2
