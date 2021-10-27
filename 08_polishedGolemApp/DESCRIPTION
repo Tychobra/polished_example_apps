@@ -1,8 +1,8 @@
 Package: polishedGolemApp
 Title: Polished with Golem App
 Version: 0.0.0.9000
-Authors@R: person('First Name', 'Last Name', email = 'email', role = c('cre', 'aut'))
-Description: Test polished with Golem.
+Authors@R: person('Patrick', 'Howard', email = 'patrick.howard@tychobra.com', role = c('cre', 'aut'))
+Description: Example of polished with Golem.
 License: What license is it under?
 Imports: 
     config,

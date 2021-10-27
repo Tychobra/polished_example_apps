@@ -17,9 +17,9 @@ golem::fill_desc(
   pkg_name = "polishedGolemApp", # The Name of the package containing the App
   pkg_title = "Polished with Golem App", # The Title of the package containing the App
   pkg_description = "Example of polished with Golem.", # The Description of the package containing the App
-  author_first_name = "First Name", # Your First Name
-  author_last_name = "Last Name", # Your Last Name
-  author_email = "email", # Your Email
+  author_first_name = "Patrick", # Your First Name
+  author_last_name = "Howard", # Your Last Name
+  author_email = "patrick.howard@tychobra.com", # Your Email
   repo_url = NULL # The URL of the GitHub Repo (optional)
 )
 
