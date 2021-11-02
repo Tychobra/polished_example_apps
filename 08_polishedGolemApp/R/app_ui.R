@@ -10,7 +10,23 @@ app_ui <- function(request) {
     golem_add_external_resources(),
     # List the first level UI elements here
     fluidPage(
-      h1("polishedGolemApp")
+      fluidRow(
+        column(
+          6,
+          h1("polishedGolemApp"),
+          br()
+        ),
+        column(
+          6,
+          br(),
+          actionButton(
+            "sign_out",
+            "Sign Out",
+            icon = icon("sign-out-alt"),
+            class = "pull-right"
+          )
+        )
+      )
     )
   )
 }
