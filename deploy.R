@@ -67,6 +67,14 @@ deploy_app(
   app_name = app_7
 )
 
+app_8 <- "08_golem_app"
+deploy_app(
+  app_dir = app_8,
+  api_key = my_config$api_key,
+  app_name = app_8,
+  golem_package_name = "polishedGolemApp"
+)
+
 
 
 
