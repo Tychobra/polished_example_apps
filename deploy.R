@@ -75,6 +75,13 @@ deploy_app(
   golem_package_name = "polishedGolemApp"
 )
 
+app_9 <- "09_rmarkdown"
+deploy_app(
+  app_dir = app_9,
+  api_key = my_config$api_key,
+  app_name = app_9,
+)
+
 
 
 
