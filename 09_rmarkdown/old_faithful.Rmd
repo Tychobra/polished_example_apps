@@ -1,8 +1,7 @@
 ---
 title: "Old Faithful Eruptions"
 polished:
-  global_sessions_config:
-    app_name: "09_rmarkdown"
+  app_name: "09_rmarkdown"
 output: flexdashboard::flex_dashboard
 runtime: shiny
 ---
