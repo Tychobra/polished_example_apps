@@ -53,10 +53,14 @@ Allow your users to sign in with social sign in providers.
 
 Use an alternate default sign in UI provided by Tychobra.  Update this UI with your brand colors, logos, and company name in minutes.
 
-#### 8. 08_polishedGolemApp
+#### 8. 08_golem_app
 
 Use [golem](https://github.com/ThinkR-open/golem) with polished.
 
-#### 9. 09_custom_admin_functionality - coming soon
+[Live App](https://demo8.polished.tech/)
 
-You can add custom tabs to the admin dashboard by passing the ui and server code to the `secure_ui()` and `secure_server()` functions.  Example coming soon.
+#### 9. 09_rmarkdown
+
+Secure Rmd documents.  You can even use shiny runtime.  Flexdashboards are frequently used with shiny runtime.
+
+[Live App](https://demo9.polished.tech/)
