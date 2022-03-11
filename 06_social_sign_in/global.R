@@ -5,7 +5,7 @@ library(config)
 app_config <- config::get()
 
 # configure polished
-global_sessions_config(
+polished_config(
   app_name = "06_social_sign_in",
   api_key = app_config$api_key,
   firebase_config = app_config$firebase,
