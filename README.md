@@ -1,6 +1,6 @@
 # Polished Example Applications <img src="images/polished_logo_transparent.png" align="right" width="120" />
 
-Example Shiny applications using [polished](https://github.com/Tychobra/polished) for authentication and user management.
+Example Shiny applications using [polished](https://github.com/Tychobra/polished) for authentication & user management. All demo apps below have been deployed with [Polished Hosting](https://polished.tech/docs/04-hosting-deploy-app).
 
 You can sign into each of the apps linked below using:
 
@@ -13,7 +13,7 @@ Additionally, the code for each app is available in this repo.  To run the apps 
 
 [Live App](https://demo1.polished.tech/)
 
-All `polished` apps use the API available at <a target="_blank" href="https://auth-api.polished.tech/v1">auth-api.polished.tech/v1</a>.  All you need is a copy of your secret API key provided at [dashboard.polished.tech](https://dashboard.polished.tech) and your provided app name, then the `polished` API handles the rest. You can find more information about the `polished` API [here](https://polished.tech/docs/3-01-auth-api).
+All `polished` apps use the API available at <a href="https://auth-api.polished.tech/v1" target="_blank">auth-api.polished.tech/v1</a>.  All you need is a copy of your secret API key provided at [dashboard.polished.tech](https://dashboard.polished.tech) and your provided app name, then the `polished` API handles the rest. You can find more information about the `polished` API [here](https://polished.tech/docs/3-01-auth-api).
 
 #### 2. 02_custom_sign_in
 
