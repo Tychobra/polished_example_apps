@@ -35,11 +35,11 @@ With `polished`, users can sign in to multiple Shiny apps using the same email/p
   - [04_basic_insurer_dashboard](https://demo4a.polished.tech/)
   - [04_interest_rate_walk](https://demo4b.polished.tech/)
 
-#### 5. 05_flex_dashboard
+#### 5. 05_rmarkdown
+
+Secure `.Rmd` documents.  You can even use Shiny runtime.  Flexdashboards are frequently used with Shiny runtime.
 
 [Live App](https://demo5.polished.tech/)
-
-Deploy a flex dashboard.
 
 #### 6. 06_social_sign_in
 
@@ -58,9 +58,3 @@ Use an alternate default sign in UI provided by Tychobra.  Update this UI with y
 Use [golem](https://github.com/ThinkR-open/golem) with `polished`.
 
 [Live App](https://demo8.polished.tech/)
-
-#### 9. 09_rmarkdown
-
-Secure `.Rmd` documents.  You can even use Shiny runtime.  Flexdashboards are frequently used with Shiny runtime.
-
-[Live App](https://demo9.polished.tech/)

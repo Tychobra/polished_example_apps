@@ -2,7 +2,7 @@
 library(polished)
 
 # read in your Polished API key
-my_config <- config::get(file = "config_internal.yml")
+my_config <- config::get(file = "config.yml")
 
 # deploy the 01_minimal example app
 app_1 <- "01_minimal_example"
@@ -46,7 +46,7 @@ polished::deploy_app(
 )
 
 
-app_5 <- "05_flex_dashboard"
+app_5 <- "05_rmarkdown"
 deploy_app(
   app_dir = app_5,
   api_key = my_config$api_key,
@@ -74,14 +74,3 @@ deploy_app(
   app_name = app_8,
   golem_package_name = "polishedGolemApp"
 )
-
-app_9 <- "09_rmarkdown"
-deploy_app(
-  app_dir = app_9,
-  api_key = my_config$api_key,
-  app_name = app_9,
-)
-
-
-
-
