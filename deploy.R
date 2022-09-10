@@ -4,6 +4,10 @@ library(polished)
 # read in your Polished API key
 my_config <- config::get(file = "config_internal.yml")
 
+polished:::set_api_url(
+  host_api_url = "https://hosting-api-amai4lhqja-ue.a.run.app/v1"
+)
+
 # deploy the 01_minimal example app
 app_1 <- "01_minimal_example"
 deploy_app(
@@ -68,7 +72,7 @@ deploy_app(
 )
 
 app_8 <- "08_golem_app"
-deploy_app(
+polished::deploy_app(
   app_dir = app_8,
   api_key = my_config$api_key,
   app_name = app_8,
@@ -79,9 +83,12 @@ app_9 <- "09_rmarkdown"
 deploy_app(
   app_dir = app_9,
   api_key = my_config$api_key,
-  app_name = app_9,
+  app_name = app_9
 )
 
-
-
-
+app_10 <- "10_2fa"
+deploy_app(
+  app_dir = app_10,
+  api_key = my_config$api_key,
+  app_name = app_10
+)
