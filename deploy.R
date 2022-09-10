@@ -2,7 +2,7 @@
 library(polished)
 
 # read in your Polished API key
-my_config <- config::get(file = "config_internal.yml")
+my_config <- config::get(file = "config.yml")
 
 polished:::set_api_url(
   host_api_url = "https://hosting-api-amai4lhqja-ue.a.run.app/v1"
@@ -50,7 +50,7 @@ polished::deploy_app(
 )
 
 
-app_5 <- "05_flex_dashboard"
+app_5 <- "05_rmarkdown"
 deploy_app(
   app_dir = app_5,
   api_key = my_config$api_key,
@@ -92,3 +92,4 @@ deploy_app(
   api_key = my_config$api_key,
   app_name = app_10
 )
+

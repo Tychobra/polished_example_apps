@@ -10,7 +10,7 @@ run_app <- function(
   ...
 ) {
 
-  polished::global_sessions_config(
+  polished::polished_config(
     app_name = "08_golem_app",
     api_key = "<your Polished API key>"
   )
