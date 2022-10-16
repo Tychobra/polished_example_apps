@@ -9,7 +9,11 @@ RUN apt-get update -qq && apt-get install -y \
   libssl-dev \
   libcurl4-openssl-dev \
   libxml2-dev \
-  gnupg2
+  gnupg2 \
+  libicu-dev \
+  libsodium-dev \
+  make \
+  zlib1g-dev
 
 
 RUN R -e "install.packages('remotes')"
@@ -17,11 +21,11 @@ RUN R -e "install.packages('remotes')"
 
 # install CRAN R packages
 RUN R -e "remotes::install_version('config', version = '0.3.1', upgrade = 'never')"
-RUN R -e "remotes::install_version('plumber', version = '1.2.0', upgrade = 'never')"
-RUN R -e "remotes::install_version('pool', version = '0.1.6', upgrade = 'never')"
+RUN R -e "remotes::install_version('plumber', version = '1.2.1', upgrade = 'never')"
+RUN R -e "remotes::install_version('jsonlite', version = '1.8.2', upgrade = 'never')"
 
 # install GitHub R packages
-RUN R -e "remotes::install_github('tychobra/polished', ref = 'ac32a0d2fa1e2414c194f4a6e59464a0bcaf19d7', force = TRUE, quiet = FALSE)"
+RUN R -e "remotes::install_github('tychobra/polished', ref = 'c8ad892087f4c1d428df360a94269b0411871fea', force = TRUE, quiet = FALSE)"
 
 
 VOLUME /plumber

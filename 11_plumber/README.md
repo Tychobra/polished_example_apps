@@ -34,7 +34,7 @@ rc <- httr::content(r)
 
 ```terminal
 # tag image for deployment to GCR (Google Container Registry)
-docker tag auth_api gcr.io/polished-299417/polished_plumber_demo
+docker tag polished_plumber_demo gcr.io/polished-299417/polished_plumber_demo
 
 # push tagged image to GCR
 docker push gcr.io/polished-299417/polished_plumber_demo

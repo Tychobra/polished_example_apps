@@ -1,3 +1,4 @@
+library(plumber)
 
 api_config <- config::get(file = "config_internal.yml")
 
