@@ -25,7 +25,7 @@ RUN R -e "remotes::install_version('plumber', version = '1.2.1', upgrade = 'neve
 RUN R -e "remotes::install_version('jsonlite', version = '1.8.2', upgrade = 'never')"
 
 # install GitHub R packages
-RUN R -e "remotes::install_github('tychobra/polished', ref = '044ad75c893e3f7721602f7055297fb1b4a71be4', force = TRUE, quiet = FALSE)"
+RUN R -e "remotes::install_github('tychobra/polished', ref = '777edae06e842fa41c892ba264b719901578ed01', force = TRUE, quiet = FALSE)"
 
 
 VOLUME /plumber
@@ -34,4 +34,4 @@ VOLUME /plumber
 COPY ./api /plumber
 
 
-ENTRYPOINT ["R", "-e", "plumber::pr_run(plumber::pr(file = '/plumber/api.R'), port=8080, host = '0.0.0.0')"]
+ENTRYPOINT ["R", "-e", "plumber::pr_run(plumber::pr(file = '/plumber/00_start.R'), port=8080, host = '0.0.0.0')"]

@@ -1,6 +1,8 @@
-library(plumber)
+
 
 api_config <- config::get(file = "config_internal.yml")
+
+
 
 polished::polished_config(
   api_key = api_config$api_key,
@@ -9,6 +11,8 @@ polished::polished_config(
 
 #' @filter auth
 polished::auth_filter()
+
+
 
 
 #' @post /hi
