@@ -10,7 +10,7 @@ polished::polished_config(
 #' @filter auth
 polished::auth_filter()
 
-# do not actually show this in the post
+
 #' @post /hi
 #'
 #' @serializer unboxedJSON

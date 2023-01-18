@@ -1,4 +1,4 @@
-FROM rocker/r-base:4.2.1
+FROM rocker/r-base:4.2.2
 MAINTAINER Andy Merlino <andy.merlino@tychobra.com>
 
 
@@ -25,7 +25,7 @@ RUN R -e "remotes::install_version('plumber', version = '1.2.1', upgrade = 'neve
 RUN R -e "remotes::install_version('jsonlite', version = '1.8.2', upgrade = 'never')"
 
 # install GitHub R packages
-RUN R -e "remotes::install_github('tychobra/polished', ref = 'c8ad892087f4c1d428df360a94269b0411871fea', force = TRUE, quiet = FALSE)"
+RUN R -e "remotes::install_github('tychobra/polished', ref = '044ad75c893e3f7721602f7055297fb1b4a71be4', force = TRUE, quiet = FALSE)"
 
 
 VOLUME /plumber

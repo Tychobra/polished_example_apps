@@ -39,3 +39,14 @@ docker tag polished_plumber_demo gcr.io/polished-299417/polished_plumber_demo
 # push tagged image to GCR
 docker push gcr.io/polished-299417/polished_plumber_demo
 ```
+
+### run tests locally
+
+
+```terminal
+docker run --rm -p 8080:8080 polished_plumber_demo
+```
+
+```R
+testthat::test_dir("./tests")
+```
